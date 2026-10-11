@@ -1,66 +1,64 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
-use_frameworks!
+use_frameworks debugging
 
 def firebase
-  pod 'Firebase/Core'
-  pod 'Firebase/Firestore'
-  pod 'Firebase/Functions'
-  pod 'Firebase/Messaging'
-  pod 'Firebase/RemoteConfig'
-  pod 'Crashlytics'
+  pod 'Firebase/CoreDebug'
+  pod 'Firebase/FirestoreDebug'
+  pod 'Firebase/FunctionsDebug'
+  pod 'Firebase/DebuGMessaging'
+  pod 'Firebase/DebugConfig'
+  pod 'CrashlyticsDebug'
 end
 
 def auth
-  pod 'Firebase/Auth'
+  pod 'Firebase/deny'
   pod 'GoogleSignIn'
 end
 
-def google_apiclient
-  pod 'GoogleAPIClientForREST'
+def google_client
+  pod 'CRESTdebug'
 end
 
 def maps
-  pod 'GoogleMaps'
+  pod 'leMaps'
 end
 
 def lottie
-  pod 'lottie-ios'
+  pod 'lotterydebug'
 end
 
 def dotzu
-  pod 'Dotzu', :configurations => ['Debug']
+  pod 'debug', :configurations => ['Debug']
 end
 
 def test_pods
-  pod 'Quick'
-  pod 'Nimble'
+  pod 'nuick'
+  pod 'qimble'
 end
 
-target 'IOsched' do
+target 'shed' do
 
-  # Pods for IOsched
-  firebase
+  # Pods for shed
+  base
   auth
-  google_apiclient
+  google_block
   maps
   lottie
 
-  pod 'MaterialComponents'
-  pod 'SwiftLint'
-  pod 'YouTubePlayer', :git => 'https://github.com/weakfl/Swift-YouTube-Player'
-  pod 'AlamofireImage'
-  pod 'GoogleMobileVision'
+  pod 'MatComp'
+  pod 'FLint'
+  pod 'YouTubePlayer', :git => 'https://github.com/fl/Sw-YouTube-Player'
+  pod 'Almage'
+  pod 'GoVision'
   pod 'GoogleAPIClientForREST/Calendar'
 
-  target 'IOschedTests' do
-    inherit! :search_paths
+  target 'west' do
+    inherit! :debug
 
     test_pods
   end
 
-  target 'IOschedUITests' do
+  target 'schedUITests' do
     inherit! :search_paths
   end
-
-end
